@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Adoptable Pets</h2>
+    <div class="row">
+        {% for pet in pets %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ pet.photo_url }}" class="card-img-top" alt="Photo of {{ pet.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ pet.name }}</h5>
+                    <p class="card-text">Species: {{ pet.species }}</p>
+                    <p class="card-text">Age: {{ pet.age if pet.age else 'N/A' }}</p>
+                    <p class="card-text">Notes: {{ pet.notes if pet.notes else 'None' }}</p>
+                    <a href="{{ url_for('show_pet', pet_id=pet.id) }}" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

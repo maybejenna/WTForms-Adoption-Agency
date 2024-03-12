@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1>{{ pet.name }}'s Details</h1>
+    <div class="row justify-content-center"> 
+        <div class="col-md-8"> 
+            <div class="pet-detail text-center"> 
+                {% if pet.photo_url %}
+                    <img src="{{ pet.photo_url }}" alt="Photo of {{ pet.name }}" class="pet-photo mx-auto d-block">
+                {% else %}
+                    <img src="path/to/default/image.jpg" alt="Default pet photo" class="pet-photo mx-auto d-block"> 
+                {% endif %}
+                <div class="pet-info">
+                    <p><strong>Species:</strong> {{ pet.species }}</p>
+                    <p><strong>Age:</strong> {{ pet.age if pet.age else 'Unknown' }}</p>
+                    <p><strong>Notes:</strong> {{ pet.notes if pet.notes else 'No additional notes.' }}</p>
+                    <p><strong>Status:</strong> {{ 'Available' if pet.available else 'Not Available' }}</p>
+                </div>
+                <a href="/{{ pet.id }}" class="btn btn-info">Edit {{ pet.name }}</a>
+            </div>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Back to All Pets</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f8f9fa;
+}
+
+#navbar, .button, input[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+#navbar {
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar a, #navbar .title h1, .pet-info h3, .pet-info div {
+    color: #ffffff; /* Adjusted for a consistent navbar, but reconsider for .pet-info h3 and div for visibility */
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.form-control, .container, .pet-detail-item, .pet-photo, .pet-info {
+    margin-right: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.pet-detail-item, .pet-info {
+    border: 1px solid #dee2e6;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    list-style-type: none;
+    width: 300px;
+    margin: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.pet-photo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.button, input[type="submit"] {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover, input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.pet-info img {
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+}
+
+.pet-info div:not(:first-of-type) {
+    margin-top: 10px;
+}
+
+/* Specific adjustments for readability and distinction */
+#navbar a, #navbar .title h1 {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.pet-info h3, .pet-info div {
+    color: #333; /* Re-adjusting for readability */
+    font-weight: bold;
+}
+
+.pet-info div {
+    color: #4CAF50; /* Keeping the availability color indication */
+}
+
+.pet-detail {
+    max-width: 600px; /* Adjust the width as necessary */
+    margin: auto; /* This centers the div in the container */
+    padding: 20px; /* Adds some padding around the content */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow for depth */
+    background: #fff; /* Assuming a light background */
+    border-radius: 5px; /* Optional: adds rounded corners */
+}
+
+.pet-photo {
+    max-width: 100%; /* Ensures the image is never more than 100% of its container's width */
+    height: auto; /* Keeps the image aspect ratio intact */
+    border-radius: 5px; /* Optional: Adds rounded corners to the image */
+    display: block; /* Ensures the image takes up the full width of its line */
+    margin: 0 auto 20px; /* Centers the image and adds some space below */
+    max-height: 400px; /* Limits the image height to ensure it doesn't take up too much vertical space */
+}
